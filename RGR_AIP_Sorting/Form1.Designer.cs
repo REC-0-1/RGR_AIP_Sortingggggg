@@ -59,8 +59,9 @@ namespace RGR_AIP_Sorting
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 444);
+            this.dataGridView1.Size = new System.Drawing.Size(641, 564);
             this.dataGridView1.TabIndex = 1;
             // 
             // chart1
@@ -70,34 +71,41 @@ namespace RGR_AIP_Sorting
             this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 144);
+            this.chart1.Location = new System.Drawing.Point(0, 264);
             this.chart1.Name = "chart1";
+            series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "пузырьком";
+            series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend1";
             series2.Name = "выбором";
+            series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";
             series3.Name = "шейкер";
+            series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series4.Legend = "Legend1";
             series4.Name = "расчёской";
+            series5.BorderWidth = 3;
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Fuchsia;
             series5.Legend = "Legend1";
             series5.Name = "быстрая";
+            series5.ShadowColor = System.Drawing.Color.Fuchsia;
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
             this.chart1.Series.Add(series4);
             this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(667, 300);
+            this.chart1.Size = new System.Drawing.Size(641, 300);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -106,7 +114,7 @@ namespace RGR_AIP_Sorting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 444);
+            this.ClientSize = new System.Drawing.Size(641, 564);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);

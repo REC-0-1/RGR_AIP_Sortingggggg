@@ -14,10 +14,6 @@ namespace RGR_AIP_Sorting
 {
     public partial class Form1 : Form
     {
-        public int A1, A2, A3, A4, A5;
-        public int B1 = 0, B2 = 0, B3 = 0, B4 = 0, B5 = 0;
-        public int C1 = 0, C2 = 0, C3 = 0, C4 = 0, C5 = 0;
-        public int D1 = 0, D2 = 0, D3 = 0, D4 = 0, D5 = 0;
         public int VremyaPuzir1;
         public int VremyaPuzir2;
         public int VremyaPuzir3;
@@ -47,7 +43,7 @@ namespace RGR_AIP_Sorting
         public int VremyaRass2;
         public int VremyaRass3;
         public int VremyaRass4;
-        public int VremyaRass5 = 1;
+        public int VremyaRass5;
 
         private void chart1_Click(object sender, EventArgs e)
         {
@@ -62,11 +58,11 @@ namespace RGR_AIP_Sorting
             chart1.Series[0].Points.AddXY(10000, VremyaPuzir4);
             chart1.Series[0].Points.AddXY(15000, VremyaPuzir5);
 
-            chart1.Series[1].Points.AddXY(1000, VremyaRass1);
-            chart1.Series[1].Points.AddXY(2000, VremyaRass2);
-            chart1.Series[1].Points.AddXY(5000, VremyaRass3);
-            chart1.Series[1].Points.AddXY(10000, VremyaRass4);
-            chart1.Series[1].Points.AddXY(15000, VremyaRass5);
+            chart1.Series[3].Points.AddXY(1000, VremyaRass1);
+            chart1.Series[3].Points.AddXY(2000, VremyaRass2);
+            chart1.Series[3].Points.AddXY(5000, VremyaRass3);
+            chart1.Series[3].Points.AddXY(10000, VremyaRass4);
+            chart1.Series[3].Points.AddXY(15000, VremyaRass5);
 
             chart1.Series[2].Points.AddXY(1000, VremyaShaker1);
             chart1.Series[2].Points.AddXY(2000, VremyaShaker2);
@@ -74,23 +70,24 @@ namespace RGR_AIP_Sorting
             chart1.Series[2].Points.AddXY(10000, VremyaShaker4);
             chart1.Series[2].Points.AddXY(15000, VremyaShaker5);
 
-            chart1.Series[3].Points.AddXY(1000, VremyaVstavka1);
-            chart1.Series[3].Points.AddXY(2000, VremyaVstavka2);
-            chart1.Series[3].Points.AddXY(5000, VremyaVstavka3);
-            chart1.Series[3].Points.AddXY(10000, VremyaVstavka4);
-            chart1.Series[3].Points.AddXY(15000, VremyaVstavka5);
+            chart1.Series[1].Points.AddXY(1000, VremyaVibor1);
+            chart1.Series[1].Points.AddXY(2000, VremyaVibor2);
+            chart1.Series[1].Points.AddXY(5000, VremyaVibor3);
+            chart1.Series[1].Points.AddXY(10000, VremyaVibor4);
+            chart1.Series[1].Points.AddXY(15000, VremyaVibor5);
 
-            chart1.Series[3].Points.AddXY(1000, VremyaQuick1);
-            chart1.Series[3].Points.AddXY(2000, VremyaQuick2);
-            chart1.Series[3].Points.AddXY(5000, VremyaQuick3);
-            chart1.Series[3].Points.AddXY(10000, VremyaQuick4);
-            chart1.Series[3].Points.AddXY(15000, VremyaQuick5);
+            chart1.Series[4].Points.AddXY(1000, VremyaQuick1);
+            chart1.Series[4].Points.AddXY(2000, VremyaQuick2);
+            chart1.Series[4].Points.AddXY(5000, VremyaQuick3);
+            chart1.Series[4].Points.AddXY(10000, VremyaQuick4);
+            chart1.Series[4].Points.AddXY(15000, VremyaQuick5);
         }
 
 
         public List<Pomogite> Элементы { get; set; }        
         public Form1()
         {
+            //hddddddd
             //Первый массив
             int[] Amas = new int[1000];
             Random rand = new Random();
@@ -111,13 +108,40 @@ namespace RGR_AIP_Sorting
                 Cmas[i] = rand.Next(10, 1001);
             }
             //Четвёртый массив
-            int[] Dmas = new int[15000];
+            int[] Dmas = new int[10000];
             for (int i = 0; i < Dmas.Length; i++)
             {
                 Dmas[i] = rand.Next(10, 1001);
             }
             //Пятый массив
-            int[] Emas = new int[25000];
+            int[] Emas = new int[15000];
+            for (int i = 0; i < Emas.Length; i++)
+            {
+                Emas[i] = rand.Next(10, 1001);
+
+            }
+            /// массивы расчески
+            int[] Tmas = new int[4500000];
+            for (int i = 0; i < Emas.Length; i++)
+            {
+                Emas[i] = rand.Next(10, 1001);
+            }
+            int[] Ymas = new int[3500000];
+            for (int i = 0; i < Emas.Length; i++)
+            {
+                Emas[i] = rand.Next(10, 1001);
+            }
+            int[] Umas = new int[2500000];
+            for (int i = 0; i < Emas.Length; i++)
+            {
+                Emas[i] = rand.Next(10, 1001);
+            }
+            int[] Imas = new int[1000000];
+            for (int i = 0; i < Emas.Length; i++)
+            {
+                Emas[i] = rand.Next(10, 1001);
+            }
+            int[] Omas = new int[10000];
             for (int i = 0; i < Emas.Length; i++)
             {
                 Emas[i] = rand.Next(10, 1001);
@@ -145,7 +169,7 @@ namespace RGR_AIP_Sorting
             sw4.Stop();
             VremyaPuzir4 = sw4.Elapsed.Milliseconds;
             var sw5 = new Stopwatch();
-            sw4.Start();
+            sw5.Start();
             int[] Puz15000 = Puzirok(Emas);
             sw5.Stop();
             VremyaPuzir5 = sw5.Elapsed.Milliseconds;
@@ -172,67 +196,37 @@ namespace RGR_AIP_Sorting
             sp4.Stop();
             VremyaVibor4 = sp4.Elapsed.Milliseconds;
             var sp5 = new Stopwatch();
-            sp4.Start();
+            sp5.Start();
             int[] Vib15000 = Vibor(Emas);
             sp5.Stop();
             VremyaVibor5 = sp5.Elapsed.Milliseconds;
-            //Сортировка вставками
-            //int D2 = 0, D3 = 0, D4 = 0, D5 = 0;
-            var sn1 = new Stopwatch();
-            sn1.Start();
-            int[] Vst1000 = Vstavka(Amas);
-            sn1.Stop();
-            VremyaVstavka1 = sn1.Elapsed.Milliseconds;
-            var sn2 = new Stopwatch();
-            sn2.Start();
-            int[] Vst2000 = Vstavka(Bmas);
-            sn2.Stop();
-            VremyaVstavka2 = sn2.Elapsed.Milliseconds;
-            var sn3 = new Stopwatch();
-            sn3.Start();
-            int[] Vst5000 = Vstavka(Cmas);
-            sn3.Stop();
-            VremyaVstavka3 = sn3.Elapsed.Milliseconds;
-            var sn4 = new Stopwatch();
-            sn4.Start();
-            int[] Vst10000 = Vstavka(Dmas);
-            sn4.Stop();
-            VremyaVstavka4 = sn4.Elapsed.Milliseconds;
-            var sn5 = new Stopwatch();
-            sn5.Start();
-            int[] Vst15000 = Vstavka(Emas);
-            sn5.Stop();
-            VremyaVstavka5 = sn5.Elapsed.Milliseconds;
             //Сортировка расчёской
-
             var ns1 = new Stopwatch();
             ns1.Start();
-            int[] Ras1000 = rassort(Amas);
+            int[] Ras1000 = rassort(Omas);
             ns1.Stop();
             VremyaRass1 = ns1.Elapsed.Milliseconds;
             var ns2 = new Stopwatch();
             ns2.Start();
-            int[] Ras2000 = rassort(Bmas);
+            int[] Ras2000 = rassort(Imas);
             ns2.Stop();
             VremyaRass2 = ns2.Elapsed.Milliseconds;
             var ns3 = new Stopwatch();
             ns3.Start();
-            int[] Ras5000 = rassort(Cmas);
+            int[] Ras5000 = rassort(Umas);
             ns3.Stop();
             VremyaRass3 = ns3.Elapsed.Milliseconds;
             var ns4 = new Stopwatch();
             ns4.Start();
-            int[] Ras10000 = rassort(Dmas);
+            int[] Ras10000 = rassort(Ymas);
             ns4.Stop();
             VremyaRass4 = ns4.Elapsed.Milliseconds;
             var ns5 = new Stopwatch();
             ns5.Start();
-            int[] Ras15000 = rassort(Emas);
+            int[] Ras15000 = rassort(Tmas);
             ns5.Stop();
             VremyaRass5 = ns5.Elapsed.Milliseconds;
-
             //Быстрая сортировка
-            //  int E2 = 0, E3 = 0, E4 = 0, E5 = 0;
             var sb1 = new Stopwatch();
             sb1.Start();
             int[] Quick1000 = QuickSort(Amas, 0, Amas.Length - 1);
@@ -259,7 +253,6 @@ namespace RGR_AIP_Sorting
             sb5.Stop();
             VremyaQuick5 = sb5.Elapsed.Milliseconds;
             //Шейкерная сортировка
-            //int D2 = 0, D3 = 0, D4 = 0, D5 = 0;
             var sg1 = new Stopwatch();
             sg1.Start();
             int[] Shaker1000 = ShakerSort(Amas);
@@ -301,7 +294,6 @@ namespace RGR_AIP_Sorting
                 выбором = VremyaVibor1,
                 шейкерная = VremyaShaker1,
                 быстрая = VremyaQuick1,
-                расчёской = VremyaRass1,
 
             });
             list.Add(new Pomogite()
@@ -311,7 +303,6 @@ namespace RGR_AIP_Sorting
                 выбором = VremyaVibor2,
                 шейкерная = VremyaShaker2,
                 быстрая = VremyaQuick2,
-                расчёской = VremyaRass2,
 
             });
             list.Add(new Pomogite()
@@ -321,7 +312,6 @@ namespace RGR_AIP_Sorting
                 выбором = VremyaVibor3,
                 шейкерная = VremyaShaker3,
                 быстрая = VremyaQuick3,
-                расчёской = VremyaRass3,
 
             });
             list.Add(new Pomogite()
@@ -331,7 +321,6 @@ namespace RGR_AIP_Sorting
                 выбором = VremyaVibor4,
                 шейкерная = VremyaShaker4,
                 быстрая = VremyaQuick4,
-                расчёской = VremyaRass4,
 
             });
             list.Add(new Pomogite()
@@ -341,9 +330,49 @@ namespace RGR_AIP_Sorting
                 выбором = VremyaVibor5,
                 шейкерная = VremyaShaker5,
                 быстрая = VremyaQuick5,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 0,
+                пузырьком = 0,
+                выбором = 0,
+                шейкерная = 0,
+                быстрая = 0,
+                расчёской = 0,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 10000,
+                расчёской = VremyaRass1,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 1000000,
+                расчёской = VremyaRass2,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 2500000,
+                расчёской = VremyaRass3,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 3500000,
+                расчёской = VremyaRass4,
+
+            });
+            list.Add(new Pomogite()
+            {
+                Элементы = 4500000,
                 расчёской = VremyaRass5,
 
             });
+
 
             return list;
         }
